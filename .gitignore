@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+config.local.json
+research.config.local.json
+.env
+dist/
+test-results/

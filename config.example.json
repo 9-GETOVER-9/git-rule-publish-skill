@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "github_account": "",
+  "target_owner": "",
+  "integration_branch": "dev",
+  "bugfix_strategy": "branch",
+  "commit_language": "zh-CN",
+  "rules_source": null,
+  "rules_sha256": null
+}

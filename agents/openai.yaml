@@ -1,0 +1,4 @@
+interface:
+  display_name: "星火燎原"
+  short_description: "按你的账号与分支规则发布 GitHub 项目，并编写清晰美观的 README"
+  default_prompt: "使用 $git-rule-publish，按我配置的账号与分支规则整理 README 并上传本次项目成果。"
