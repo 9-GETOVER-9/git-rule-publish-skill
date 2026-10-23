@@ -28,6 +28,14 @@ class PackageTests(unittest.TestCase):
         meta, data = manage.check(self.skill)
         self.assertTrue(data['SKILL.md'])
 
+    def test_git_lf_checkout_preserves_manifest(self):
+        # Simulate the text conversion enforced by .gitattributes on checkout.
+        meta = json.loads((self.skill / 'version.json').read_text(encoding='utf-8'))
+        for name in meta['files'] + ['manifest.json']:
+            path = self.skill / name
+            path.write_bytes(path.read_bytes().replace(b'\r\n', b'\n'))
+        manage.check(self.skill)
+
     def test_edit_without_manifest_refresh_fails(self):
         with (self.skill / 'SKILL.md').open('a', encoding='utf-8') as stream:
             stream.write('\nChanged instruction\n')
